@@ -1,2 +1,0 @@
-Primeiro nome: Gustavo
-segundo name: Costa 
