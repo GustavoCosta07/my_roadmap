@@ -86,3 +86,5 @@ O git log serve para verificar o status dos últimos commits da aplicação. Ele
       git log
 
 # git push
+
+É usado para enviar novos commits ao repositório. 
