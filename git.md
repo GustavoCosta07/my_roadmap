@@ -74,6 +74,10 @@ O git commit serve para commitar um ou mais arquivos.
 **comando para commitar um único arquivo dentro do repositório:** 
 
       git commit meuArquivo.txt -m "Alteração que foi feita"
+
+**comando para adicionar e commitar um arquivo ao mesmo tempo tirando a necessidade do git add:**
+
+      git commit -am "Alteração que foi feita"  
 # git log
 O git log serve para verificar o status dos últimos commits da aplicação. Ele vai dar as seguintes informações: 
 * O autor do commit 
@@ -85,38 +89,97 @@ O git log serve para verificar o status dos últimos commits da aplicação. Ele
 
       git log
 
-git shorlog = mostrar em ordem alfábetica quais foram os autores, quantos commit foram feitos e quais foram os commits 
+# git shortlog 
 
-git shortlog sn = quantidade de commits por pessoa 
+ O git shortlog serve para mostrar em ordem alfábetica quais foram os autores de um commit, quantos commits foram feitos e quais foram os commits.
 
-git show numero_da_rash = ver o que foi adicionado nesse commit 
+ **comando:**
 
-git diff = olhar o que foi alterado antes de commitar *duvida: o git show não faz a mesma coisa ? 
+      git shortlog 
 
-git diff --name only = descobrir quais arquivos no repositóro foram modificados
+# git shortlog sn
+O git shortlog sn serve para saber a quantidade de commits por pessoa 
 
-git commit -am "" = teoricamente ele já adiciona o arquivo e commita ao mesmo tempo tirando a necessidade do git add 
+**comando:**
 
-git checkout nome_do_arquivo = retornar este arquivo para antes da edição
+      git shortlog sn 
+
+# git show 
+
+O git show serve para ver o que foi adicionado nesse commit, para esse comando funcionar você pode ou não utilizar o número rash gerado pelo commit, veja: 
+
+      comando: git show 
+      Dessa forma esse comando irá mostrar o que foi adicionado em todo o histórico de commits desse repositório, isso é um pronlema quando já se tem vários commits no repositório.
+
+      comando: git show numero_rash
+      Dessa forma o comando irá mostrar somente o que foi adicionado nesse commit em específico.
+
+# git diff
+O git diff serve para olhar o que foi alterado antes de commitar 
+
+dúvida: o git show não faz a mesma coisa ? 
+
+**comando:**
+
+      git diff
+
+      git diff --name-only 
+     O "git diff --name-only" serve para descobrir quais arquivos no repositóro foram modificados
+
+
+
+
+# git checkout 
+Este comando serve para retornar um arquivo para antes da edição
+
 obs: fazer isso antes de commitar 
 
-git reset HEAD nome_do_arquivo = retornar o arquivo para unstaged para continuar a alteração
-Obs: o arquivo precisa ter sido alterado anteriormente e adicionado para staged
-duvida: não é meio inítil ? eu posso simplismente continuar a alteração e depois adicionar novamente. 
-obs 2: é útil para remover a ultima alteração por completo trabalhando com o giit checkout mas é inútil se o assunto for continuar a alteração 
+**comando:**
 
-git reset --soft = anular o commit, porém, manter o arquivo em staged 
+      git checkout nome_do_arquivo
 
-git reset --mixed = anular o commit e retornar o arquivo para unstaged 
+# git reset
+Este comando serve para retornar o arquivo para unstaged
 
-git reset --hard = anular por completo o commit e toda a alteração nesse arquivo pós o último commit 
+**Observação:** 
+O arquivo precisa ter sido adicionado para staged
 
-git checkout -b teste(nome do branch) = criar uma nova branch 
+**comando:**
 
-git branch -D nome_do_branch = para apagar um branch 
+      git reset HEAD nome_do_arquivo
+
+      É útil para remover a ultima alteração por completo trabalhando com o git checkout mas é inútil se você quer for continuar a alteração. 
+
+      git reset --soft 
+      anular o commit, porém, manter o arquivo em staged 
+
+      git reset --mixed
+      anular o commit e retornar o arquivo para unstaged 
+
+      git reset --hard
+      anular por completo o commit e toda a alteração nesse arquivo pós o último commit 
+
+# Como criar uma branch 
+
+**comando:**
+
+      git checkout -b nome_do_branch
+      
+
+# Como apagar uma branch
+
+**comando:**
+
+      git branch -D nome_do_branch 
 duvida: é possível apagar a branch master ? 
 
-git revert numeroRash = reverter a última alteração desse commit 
+# git revert numeroRash 
+
+Este comando serve para reverter a última alteração desse commit 
+
+**comando:**
+
+      git revert numero_rash 
 # git push
 
-É usado para enviar novos commits ao repositório. 
+Este comando é usado para enviar novos commits ao repositório remoto. 
