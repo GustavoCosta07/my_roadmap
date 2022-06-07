@@ -85,6 +85,38 @@ O git log serve para verificar o status dos últimos commits da aplicação. Ele
 
       git log
 
+git shorlog = mostrar em ordem alfábetica quais foram os autores, quantos commit foram feitos e quais foram os commits 
+
+git shortlog sn = quantidade de commits por pessoa 
+
+git show numero_da_rash = ver o que foi adicionado nesse commit 
+
+git diff = olhar o que foi alterado antes de commitar *duvida: o git show não faz a mesma coisa ? 
+
+git diff --name only = descobrir quais arquivos no repositóro foram modificados
+
+git commit -am "" = teoricamente ele já adiciona o arquivo e commita ao mesmo tempo tirando a necessidade do git add 
+
+git checkout nome_do_arquivo = retornar este arquivo para antes da edição
+obs: fazer isso antes de commitar 
+
+git reset HEAD nome_do_arquivo = retornar o arquivo para unstaged para continuar a alteração
+Obs: o arquivo precisa ter sido alterado anteriormente e adicionado para staged
+duvida: não é meio inítil ? eu posso simplismente continuar a alteração e depois adicionar novamente. 
+obs 2: é útil para remover a ultima alteração por completo trabalhando com o giit checkout mas é inútil se o assunto for continuar a alteração 
+
+git reset --soft = anular o commit, porém, manter o arquivo em staged 
+
+git reset --mixed = anular o commit e retornar o arquivo para unstaged 
+
+git reset --hard = anular por completo o commit e toda a alteração nesse arquivo pós o último commit 
+
+git checkout -b teste(nome do branch) = criar uma nova branch 
+
+git branch -D nome_do_branch = para apagar um branch 
+duvida: é possível apagar a branch master ? 
+
+git revert numeroRash = reverter a última alteração desse commit 
 # git push
 
 É usado para enviar novos commits ao repositório. 
